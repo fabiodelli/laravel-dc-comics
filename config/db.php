@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'comics' => [
+    'products' => [
 
     [
         "title" => "Action Comics #1000: The Deluxe Edition",
