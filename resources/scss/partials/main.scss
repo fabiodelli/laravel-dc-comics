@@ -1,0 +1,39 @@
+.main {
+    background: black;
+    color: white;
+
+    .jumbo {
+        height: 270px;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+        }
+    }
+    .container_70_main {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        padding: 3rem;
+        .row{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            .col_2{
+                width: calc(100%/6);
+                height:fit-content;
+                .card{
+                
+                    justify-content: center;
+                    height:fit-content;
+                    img{
+                        height: 150px;
+                    }
+                    div{
+                        height:fit-content;
+                    }
+                }
+            }
+        }
+    }
+}

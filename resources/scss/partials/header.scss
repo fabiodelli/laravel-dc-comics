@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    margin: auto;
+
+    img {
+        width: 70px;
+    }
+}
+
+.nav_links {
+    display: flex;
+
+    li {
+        list-style: none;
+        margin: 0.5rem;
+        font-size: 14px;
+    }
+    a{
+        text-decoration: none;
+        list-style: none;
+        margin: 0.5rem;
+        font-size: 14px;
+        color: black;
+    }
+}
