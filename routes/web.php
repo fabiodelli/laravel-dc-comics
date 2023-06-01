@@ -22,7 +22,7 @@ Route::get('/',[PageController::class,'index'])->name('home');
 Route::get('/movies',[PageController::class,'movies'])->name('movies');
 
 Route::get('/news',[PageController::class,'news'])->name('news');
-
+/*
 Route::get('/products/index', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('products.index');
 
 Route::get('/products/create', [App\Http\Controllers\admin\ProductController::class, 'create'])->name('products.create');
@@ -32,7 +32,7 @@ Route::get('/products/show', [App\Http\Controllers\admin\ProductController::clas
 Route::get('/products/edit', [App\Http\Controllers\admin\ProductController::class, 'edit'])->name('products.edit');
 
 Route::put('/products/{product}', [App\Http\Controllers\admin\ProductController::class, 'update'])->name('products.update');
-
+*/
 Route::resource('products', \App\Http\Controllers\admin\ProductController::class, ['as' => 'admin']);
 
 

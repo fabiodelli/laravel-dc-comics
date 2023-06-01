@@ -2,7 +2,7 @@
 @section('title','Add new item')
 @section('content')
 <div class="container">
-    <form action="{{route('products.update',$product->id)}}" method="post">
+    <form action="{{route('admin.products.update',$product->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="mb-3">

@@ -5,7 +5,7 @@
 
     <div class="container">
         <div class="row">
-            {{-- @forelse ($products as $product)
+            @forelse ($products as $product)
             <div class="col-6">
                 <div class="card">
                     <img class="card-img-top" src="holder.js/100x180/" alt="{{$product->title}}">
@@ -17,7 +17,7 @@
             </div>
             @empty
             <p>No products available.</p>
-            @endforelse            --}}
+            @endforelse           
         </div>
     </div>
 </div>

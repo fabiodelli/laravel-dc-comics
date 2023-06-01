@@ -47,9 +47,9 @@
                             <td>{{ $product->type }}</td>
                             <td>
                                 <a name="" id="" class="btn btn-primary"
-                                    href="{{ route('products.show', $product->id) }}" role="button">View</a>
+                                    href="{{ route('admin.products.show', $product->id) }}" role="button">View</a>
                                 <a name="" id="" class="btn btn-primary"
-                                    href="{{ route('products.edit', $product->id) }}" role="button">Edit</a>
+                                    href="{{ route('admin.products.edit', $product->id) }}" role="button">Edit</a>
                                 <!-- Modal trigger button -->
                                 <button type="button" class="btn btn-danger " data-bs-toggle="modal"
                                     data-bs-target="#{{ $product->id }}">
