@@ -9,7 +9,7 @@ use App\Http\Requests\UpdateproductRequest;
 
 class ProductController extends Controller
 {
-    /**-------------------------------------------------------------
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -17,10 +17,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = product::all();
-        return view('admin.products.index',compact('products'));
+        return view('admin.products.index',compact('product'));
     }
 
-    /**--------------------------------------------------------------------
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -30,7 +30,7 @@ class ProductController extends Controller
         return view('admin.products.create');
     }
 
-    /**--------------------------------------------------------------------
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreproductRequest  $request
@@ -52,7 +52,7 @@ class ProductController extends Controller
 }
 
 
-    /**---------------------------------------------------------------------
+    /**
      * Display the specified resource.
      *
      * @param  \App\Models\product  $product
@@ -60,12 +60,12 @@ class ProductController extends Controller
      */
     public function show(Product $product)
 {
-    return view('admin.products.show', compact('products'));
+    return view('admin.products.show', compact('product'));
 }
 
 
 
-    /**----------------------------------------------------------------------
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\product  $product
@@ -73,11 +73,11 @@ class ProductController extends Controller
      */
     public function edit(product $product)
 {
-    return view('admin.products.edit', compact('products'));
+    return view('admin.products.edit', compact('product'));
 }
 
 
-    /**-----------------------------------------------------------------------
+    /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateproductRequest  $request
@@ -96,7 +96,7 @@ class ProductController extends Controller
 }
 
 
-   /**-----------------------------------------------------------------------
+   /**
  * Remove the specified resource from storage.
  *
  * @param  \App\Models\Product  $product
