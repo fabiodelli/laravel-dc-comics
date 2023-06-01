@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\product;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreproductRequest;
 use App\Http\Requests\UpdateproductRequest;
 
 class ProductController extends Controller
 {
-    /**
+    /**-------------------------------------------------------------
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -20,7 +20,7 @@ class ProductController extends Controller
         return view('admin.products.index',compact('products'));
     }
 
-    /**
+    /**--------------------------------------------------------------------
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -30,7 +30,7 @@ class ProductController extends Controller
         return view('admin.products.create');
     }
 
-    /**
+    /**--------------------------------------------------------------------
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreproductRequest  $request
@@ -38,18 +38,21 @@ class ProductController extends Controller
      */
     public function store(StoreproductRequest $request)
 {
-    $product = new Product();
-    $product->title = $request->input('title');
-    $product->description = $request->input('description');
-    // Assegna i valori ad altri campi del prodotto
-
-    $product->save();
-
-    return redirect()->route('products.index')->with('success', 'Prodotto creato con successo.');
+    $data =[
+        "title" => $request->title,
+        "price" => $request->price, 
+        "thumb" => $request->thumb,  
+        "series" => $request->series, 
+        "sale_date" => $request->sale_date, 
+        "type" => $request->type, 
+        "description" => $request->description, 
+    ];
+    Product::create($data);
+    return to_route('admin.products.index')->with('message','is add new item');
 }
 
 
-    /**
+    /**---------------------------------------------------------------------
      * Display the specified resource.
      *
      * @param  \App\Models\product  $product
@@ -57,12 +60,12 @@ class ProductController extends Controller
      */
     public function show(Product $product)
 {
-    return view('admin.products.show', compact('product'));
+    return view('admin.products.show', compact('products'));
 }
 
 
 
-    /**
+    /**----------------------------------------------------------------------
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\product  $product
@@ -70,11 +73,11 @@ class ProductController extends Controller
      */
     public function edit(product $product)
 {
-    return view('admin.products.edit', compact('product'));
+    return view('admin.products.edit', compact('products'));
 }
 
 
-    /**
+    /**-----------------------------------------------------------------------
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateproductRequest  $request
@@ -93,7 +96,7 @@ class ProductController extends Controller
 }
 
 
-   /**
+   /**-----------------------------------------------------------------------
  * Remove the specified resource from storage.
  *
  * @param  \App\Models\Product  $product
