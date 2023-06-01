@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-Route::get('/movies', function () {
-    return view('movies');
-})->name('movies');
 
-Route::get('/news', function () {
-    return view('news');
-})->name('news');
+Route::get('/',[PageController::class,'index'])->name('home');
+
+Route::get('/movies',[PageController::class,'movies'])->name('movies');
+
+Route::get('/news',[PageController::class,'news'])->name('news');
+
+Route::get('/products/index', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('products.index');
+
+Route::get('/products/create', [App\Http\Controllers\admin\ProductController::class, 'create'])->name('products.create');
+
+Route::get('/products/show', [App\Http\Controllers\admin\ProductController::class, 'show'])->name('products.show');
+
+Route::get('/products/edit', [App\Http\Controllers\admin\ProductController::class, 'edit'])->name('products.edit');
+
+Route::put('/products/{product}', [App\Http\Controllers\admin\ProductController::class, 'update'])->name('products.update');
+
+Route::resource('products', \App\Http\Controllers\admin\ProductController::class, ['as' => 'admin']);
+
+
+
+

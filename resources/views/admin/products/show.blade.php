@@ -1,18 +1,18 @@
 @extends('layouts.app')
-@section('title',$product->name)
+@section('title',$product->title)
 @section('content')
 <div class="container">
     <div class="card">
-        <img class="" width="200" src="{{$comic->thumb}}" alt="{{$comic->name}}">
+        <img class="" width="200" src="{{$product->thumb}}" alt="{{$product->title}}">
         <div class="card-body">
-            <h4 class="card-title">{{$comic->name}}</h4>
-            <p class="card-text">description:{{$comic->description}}</p>
-            <p class="card-text">{{$comic->weight}}</p>
-            <p class="card-text">{{$comic->in_stock}}</p>
+            <h4 class="card-title">{{$product->title}}</h4>
+            <p class="card-text">description:{{$product->description}}</p>
+            <p class="card-text">{{$product->series}}</p>
+            <p class="card-text">{{$product->sale_date}}</p>
         </div>
         <div class="card-footer">
-            <p class="card-text">{{$comic->comic_code}}</p>
-            <p class="card-text">{{$comic->price}}</p>
+            
+            <p class="card-text">€{{$product->price}}</p>
         </div>
     </div>
 </div>
