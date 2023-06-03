@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 @section('title', 'Admin')
 @section('content')
 
@@ -10,8 +10,10 @@
 
     <div class="container">
 
-        <a name="" id="" class="btn btn-primary" href="{{ route('admin.products.create') }}" role="button">Add
-            Product</a>
+        <div class="d-flex justify-content-end">
+            <a name="" id="" class="btn btn-primary ms-100%" href="{{ route('admin.products.create') }}" role="button">Add Product</a>
+        </div>
+
 
         <div class="table-responsive">
             <table
@@ -21,11 +23,9 @@
             table-primary
             align-middle">
                 <thead class="table-light">
-                    <caption>Products</caption>
                     <tr>
                         <th>ID</th>
                         <th>TITLE</th>
-                        <th>DESCRIPTION</th>
                         <th>IMAGE</th>
                         <th>PRICE</th>
                         <th>SERIES</th>
@@ -39,19 +39,18 @@
                         <tr class="table-primary">
                             <td scope="row">{{ $product->id }}</td>
                             <td>{{ $product->title }}</td>
-                            <td>{{ $product->description }}</td>
                             <td><img src="{{ $product->thumb }}" width="100" alt="{{ $product->title }}"></td>
                             <td>€{{ $product->price }}</td>
                             <td>{{ $product->series }}</td>
                             <td>{{ $product->sale_date }}</td>
                             <td>{{ $product->type }}</td>
-                            <td>
+                            <td class="" >
                                 <a name="" id="" class="btn btn-primary"
                                     href="{{ route('admin.products.show', $product->id) }}" role="button">View</a>
                                 <a name="" id="" class="btn btn-primary"
                                     href="{{ route('admin.products.edit', $product->id) }}" role="button">Edit</a>
                                 <!-- Modal trigger button -->
-                                <button type="button" class="btn btn-danger " data-bs-toggle="modal"
+                                <button type="button" class="btn btn-danger mt-3 " data-bs-toggle="modal"
                                     data-bs-target="#{{ $product->id }}">
                                     Delete
                                 </button>

@@ -7,11 +7,11 @@ use App\Models\product;
 
 class PageController extends Controller
 {
-    public function index()
+    public function home()
     {
         
         $products = product::all();
-        return view('admin.products.index', compact('products'));
+        return view('home',compact('products'));
 
     }
     public function movies()
@@ -22,6 +22,11 @@ class PageController extends Controller
     public function news()
     {
         return view('news');
+
+    }
+    public function index()
+    {
+        return view('index');
 
     }
 }

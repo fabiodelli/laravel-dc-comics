@@ -92,7 +92,7 @@ class ProductController extends Controller
 
     $product->save();
 
-    return redirect()->route('products.index')->with('success', 'Prodotto aggiornato con successo.');
+    return redirect()->route('admin.products.index')->with('success', 'Prodotto aggiornato con successo.');
 }
 
 
